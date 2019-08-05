@@ -7,20 +7,11 @@ import pgConfig from './config/pg'
 
 @Module({
   imports: [
-    // GraphQLModule.forRoot({
-    //   typePaths: ['./**/*.graphql'],
-    //   autoSchemaFile: 'schema.gql',
-    // }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '123456',
-      database: 'graphql',
-      entities: ['src/**/*.entity.ts'],
-      logging: ['query', 'error'],
+    GraphQLModule.forRoot({
+      typePaths: ['./**/*.graphql'],
+      autoSchemaFile: 'schema.gql',
     }),
+    TypeOrmModule.forRoot(pgConfig),
     SharedModule,
     CoreModule,
   ],

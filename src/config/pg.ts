@@ -1,4 +1,6 @@
-export default {
+import { TypeOrmModuleOptions } from '@nestjs/typeorm'
+
+const config: TypeOrmModuleOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
@@ -8,3 +10,5 @@ export default {
   entities: ['src/**/*.entity.ts'],
   logging: ['query', 'error'],
 }
+
+export default config
